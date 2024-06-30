@@ -27,20 +27,6 @@ SECRET_KEY = 'django-insecure-0#_qxjd2!6uocf&i&e0yf=v_$sc8f^*%@^!k#^3&w_h!*9s&3k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
-    ),
-    "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.IsAuthenticated",
-    ],
-}
-
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-}
-
 ALLOWED_HOSTS = [
     '*'
 ]
@@ -156,6 +142,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CSRF_TRUSTED_ORIGINS = ['https://web-production-fba0.up.railway.app', 'http://*']
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
