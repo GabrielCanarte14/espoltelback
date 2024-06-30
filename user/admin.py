@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import UserProfile, Role, UserRole
+
+admin.site.register(UserProfile)
+admin.site.register(Role)
+admin.site.register(UserRole)
