@@ -84,11 +84,11 @@ WSGI_APPLICATION = 'espoltel_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'espoltel_db',
+        'NAME': 'railway',
         'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost', 
-        'PORT': '3306',        
+        'PASSWORD': 'omSFaDomCpooRBwbriqzQPxfUdJJhftG',
+        'HOST': 'monorail.proxy.rlwy.net', 
+        'PORT': '16962',        
     }
 }
 
