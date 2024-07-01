@@ -1,3 +1,4 @@
+from django.db.utils import OperationalError
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
 
@@ -31,7 +32,7 @@ class UserProfileRetrieve(generics.RetrieveAPIView):
             user_profile = UserProfile.objects.get(user=user)
             serializer = UserProfileSerializer(user_profile)
             return Response(serializer.data, status=status.HTTP_200_OK)
-        except Exception as e:
+        except OperationalError as e:
             response_data = {
                 "status": "error",
                 "message": "Fallo al obtener el perfil del usuario",

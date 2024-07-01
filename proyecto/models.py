@@ -17,7 +17,7 @@ class BudgetItem(models.Model):
         return f"{self.recurso} - {self.categoria}"
 
 class Solicitud(models.Model):
-    codigo = models.CharField(max_length=15) 
+    codigo = models.CharField(max_length=15)
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=200)
     tema = models.CharField(max_length=100)

@@ -201,11 +201,21 @@ class BudgetItemDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
 # crear una solicitud de un proyecto YA EXISTENTE
 
 
-class SolicitudCreateAPIView(generics.CreateAPIView):
+class SolicitudCreateAPIView(APIView):
     permission_classes = [AllowAny]
     serializer_class = SolicitudSerializer
 
     def post(self, request, proyecto_id):
+        """
+        Create a new solicitud for a proyecto.
+
+        Args:
+            request (HttpRequest): The HTTP request object.
+            proyecto_id (int): The ID of the proyecto.
+
+        Returns:
+            Response: The HTTP response containing the result of the operation.
+        """
         try:
             proyecto = Proyecto.objects.get(id=proyecto_id)
         except Proyecto.DoesNotExist:

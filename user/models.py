@@ -9,7 +9,7 @@ class UserProfile(models.Model):
     cedula = models.CharField(max_length=10, blank=True)
     is_active = models.BooleanField(default=True)
     def __str__(self):
-        return self.user.username
+        return str(self.user.username)
     def delete_user(self):
         """
         Deletes the user from the database.
