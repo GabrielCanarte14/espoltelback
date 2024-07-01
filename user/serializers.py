@@ -6,12 +6,12 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username','password']
-        extra_kwargs = {'password': {'write_only': True, 
+        extra_kwargs = {'password': {'write_only': True,
                                      'required': True}}
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data)
         return user
-    
+
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserProfile
@@ -23,6 +23,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
                         'cedula': {'required': True},
                         'is_active': {'required': True},
                         }
+
 class RoleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Role
@@ -35,3 +36,4 @@ class UserRoleSerializer(serializers.ModelSerializer):
         fields = ['user', 'role']
         extra_kwargs = {'role': {'required': True},
                         'user': {'required': True}}
+        
