@@ -13,7 +13,7 @@ from .serializers import (BudgetItemSerializer, ProyectoSerializer,
 class ProyectoListCreateAPIView(APIView):
     permission_classes = [AllowAny]
 
-    def get(self):
+    def get(self, request):
         """
         Retrieves all projects.
 
